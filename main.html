@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>TO-DO list</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css'  href='styles.css'>
+    
+</head>
+<body>
+    <header id="head-bg" class="head-bg"></header>
+    <main id="main">
+        <nav class="head">
+        <h1 id="h1">T O D O</h1> 
+        <img class="moon-logo" onclick="changeMode()" />
+        <img class="sun-logo" onclick="changeMode2()" />      
+        </nav>
+        <form action="post" id="form" class="form">
+       <input type="text" class="sec-add" id="sec-add" placeholder="create a new to do..">
+       <nav id="btn" class="btn-style" onclick="list()">add</nav>
+        <div id="list-div" class="div-style">
+            <ul id="list">
+                
+            </ul>
+        </div>
+        <nav id="btn2" class="btn-style-2" onclick="removeList()">Clear All</nav>
+    </form>
+</main>
+<script src='index.js'></script>
+</body>
+</html>

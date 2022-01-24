@@ -1,0 +1,359 @@
+*{
+    font-size: 18px;
+}
+body{
+    background-color: hsl(0, 0%, 98%);
+}
+.head-bg{
+    background-image: url(/images/bg-desktop-light.jpg);
+    width: 100%;
+    height: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+#h1{
+    font-size: 35px;
+    color: white;
+}
+#main{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    max-width: 100%;
+    min-width: 50%;
+    margin-top: -60px;
+}
+.head{
+    margin-right: 100px;
+    margin-bottom: 40px;
+    margin-top: 100px;
+    margin-left: 550px;
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+}
+.moon-logo{
+    background-image: url(/images/icon-moon.svg);
+    width: 27px;
+    height: 26px;
+    cursor: pointer;
+    margin-left: 200px;
+   margin-top: 30px;
+}
+.form{
+    position: absolute;
+    display: flex;
+    margin-top: 180px;
+    margin-left: 30em;
+    max-width: 100%;
+    min-width: 90%;
+}
+.sec-add, .div-style{
+    box-shadow: 1px 3px 4px 1px #969696;
+  	-webkit-box-shadow: 1px 3px 15px .2px #969696;
+    border-radius: 5px;
+    width: 45vw;
+    padding: 15px;
+    border: none;  
+}
+.sec-add{
+    height: 50px; 
+}
+.sec-add:focus{
+outline: none;
+}
+.div-style{
+    background-color: white;
+    margin-top: 100px;
+    margin-left: -610px;
+    margin-bottom: 40px;
+    height: 300px;
+}
+.btn-style, .btn-style-2{
+    position:absolute;
+    background-color: transparent;
+    border: none;
+    color: hsl(236, 9%, 61%);
+    font-family:monospace;
+}
+.btn-style{
+    margin-top: 30px;
+    margin-left:550px;
+    cursor:pointer;
+}
+.btn-style:hover{
+    background-color:hsl(0, 0%, 98%);
+}
+.btn-style-2{
+margin-top: 22em;
+margin-left:500px;
+cursor:pointer;
+}
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #eee;
+    transition: 0.2s;
+    margin-left: -30px;
+    margin-top: 5px;
+   font-size: 20px;
+  }
+li:hover{
+    background-color:  hsl(233, 11%, 84%);
+}
+li{
+    border-bottom: 1px solid hsl(236, 9%, 61%);
+}
+ul li.checked{
+background-color: hsl(236, 9%, 61%);
+color: black;
+text-decoration: line-through;
+}
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: hsl(0, 0%, 98%);
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+  .close {
+    position: absolute;
+    padding: 12px 16px 14px 16px;
+    margin-left: 485px;
+    margin-top: -35px ;
+    display: block;
+  }
+  
+  .close:hover {
+    background-color: hsl(235, 19%, 35%);
+    color: white;
+  }
+
+
+/*for changing mode*/
+.sun-logo{
+    background-image: url(/images/icon-sun.svg);
+    width: 27px;
+    height: 26px;
+    cursor: pointer;
+    margin-left: 10px;
+   margin-top: 30px;
+}
+.changeHeader{
+    background-image: url(/images/bg-desktop-dark.jpg);
+    width: 100%;
+    height: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.changeDiv{
+    background-color: hsl(235, 24%, 19%);
+    width: 45vw; 
+    margin-top: 100px;
+    margin-left: -610px;
+    height: 300px;
+    margin-bottom: 40px; 
+    box-shadow: 1px 3px 4px 1px #424141;
+    -webkit-box-shadow: 1px 3px 15px .2px #424141;
+  border-radius: 5px;
+  width: 45vw;
+  padding: 15px;
+  border: none;
+}
+.changeInput{
+    background-color: hsl(235, 24%, 19%);
+    color: hsl(234, 39%, 85%);
+    height: 50px;
+    margin-bottom: 40px; 
+    box-shadow: 1px 3px 4px 1px #424141;
+    -webkit-box-shadow: 1px 3px 15px .2px #424141;
+  border-radius: 5px;
+  width: 45vw;
+  padding: 15px;
+  border: none;
+}
+
+
+@media (min-width:1200px){
+    
+}
+
+@media (min-width:992px) and (max-width:1199px){
+.head{
+    margin-left: 300px;
+}
+.sec-add, .changeInput{
+    margin-left: -90px;
+    margin-top: 35px;
+    width: 35em;
+}
+.div-style, .changeDiv{
+    margin-left: -670px;
+    margin-top: 140px;
+    width: 35em;
+}
+.btn-style{
+    margin-left: 500px;
+    margin-top: 60px;
+}
+.btn-style-2{
+    margin-left: 450px;
+    margin-top: 430px;
+}
+}
+
+@media (min-width:778px) and (max-width:991px){
+.head{
+    margin-left: 200px;
+    font-size: 40px;
+    }
+.sec-add, .changeInput{
+    margin-left: 90px;
+    margin-top: 230px;
+    width:30em;
+}
+.div-style, .changeDiv{
+    margin-top: 330px;
+    margin-left: -570px;
+    width:30em;
+}
+.btn-style{
+    margin-left: 600px;
+    margin-top: 260px;
+}
+.btn-style-2{
+    margin-left: 550px;
+    margin-top: 620px;
+}
+.close{
+    margin-left: 450px;
+}
+
+.form, .main{
+    margin:0;
+    padding: 0;   
+}
+.main{
+    width: 0%;
+}
+.form{
+    width: auto;
+}
+}
+
+
+@media (min-width: 480px) and (max-width:777px) {
+    #head-bg{
+        background-image: url(/images/bg-mobile-light.jpg) no-repeat;
+        max-width: 100%;
+        height: 35vh;
+    }
+    .head{
+        margin-left: 100px;
+        margin-right: 0;
+    }
+    .sec-add, .changeInput{
+        width: 21em;
+        margin-left: 30px;
+        margin-top: 290px;
+        
+    }
+    .div-style, .changeDiv{
+        margin-left: -400px;
+        width: 21em;
+        margin-top: 400px;
+       
+    }
+    .btn-style{
+        margin-left: 400px;
+        margin-top: 320px;
+    }
+    .btn-style-2{
+        margin-left: 350px;
+        margin-top: 700px;
+        font-size: 15px;
+    }
+    .close{
+        margin-left: 280px;
+    }
+    .moon-logo,.sun-logo{
+        width: 13%;
+    }
+    .form, .main{
+        margin:0;
+        padding: 0;   
+    }
+    .main{
+        width: 0%;
+    }
+    .form{
+        width: auto;
+    }
+}
+
+@media (max-width: 479px) {
+    #head-bg{
+        background-image: url(/images/bg-mobile-light.jpg) no-repeat;
+        max-width: 100%;
+        height: 40vh;
+    }
+    .div-style, .changeDiv{
+       margin-left: -370px;
+       margin-top: 350px;
+       width: 80%;
+       font-size: 15px;
+    }
+    .changeInput, .sec-add{
+       margin-left: 30px;
+       margin-top: 250px;
+       width: 80%;
+       font-size: 15px;
+    }
+     #h1{
+         font-size: 31px;
+        margin-left: 100px;
+         width: 100%;
+         margin-top: -10px;
+     }  
+    .moon-logo,.sun-logo{
+        width: 40%;
+        margin-top: 60px;
+    }
+    .moon-logo{
+        margin-left: 90px;
+    }
+    .btn-style{
+        margin-left: 350px;
+        margin-top: 280px;
+    }
+    .btn-style-2{
+        margin-left: 290px;
+        margin-top: 650px;
+    }
+    .close{
+        margin-left: 250px;
+    }
+    .form, .main{
+        margin:0;
+        padding: 0;   
+    }
+    .main{
+        width: 0%;
+    }
+    .form{
+        width: auto;
+    }
+
+
+}
