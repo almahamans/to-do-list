@@ -1,4 +1,4 @@
-//add elements and count number of items
+//add elements 
 function list(){
     var li = document.createElement("li");
   var inputValue = document.getElementById("sec-add").value;
@@ -10,7 +10,7 @@ function list(){
     document.getElementById("list").appendChild(li);
   }
   document.getElementById("sec-add").value = "";
-
+//create close sign and like it to each created element
   var span = document.createElement("span");
   var txt = document.createTextNode("\u00D7");
   span.className = "close";
@@ -28,7 +28,7 @@ function list(){
 }
 
 
-//delete one element
+//delete one element from close sign
 var close = document.getElementsByClassName("close");
 var i;
 var div;
@@ -40,7 +40,7 @@ for (i = 0; i < close.length; i++) {
  }
 
 
-//check one element
+//check on one element
 var lists = document.querySelector('ul');
 lists.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
