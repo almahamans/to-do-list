@@ -5,7 +5,7 @@ body{
     background-color: hsl(0, 0%, 98%);
 }
 .head-bg{
-    background-image: url(images/bg-desktop-light.jpg);
+    background-image: url(./images/bg-desktop-light.jpg);
     width: 100%;
     height: 300px;
     position: fixed;
@@ -35,7 +35,7 @@ body{
     justify-content: center;
 }
 .moon-logo{
-    background-image: url(images/icon-moon.svg);
+    background-image: url(./images/icon-moon.svg);
     width: 27px;
     height: 26px;
     cursor: pointer;
