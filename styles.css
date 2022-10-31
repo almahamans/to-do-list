@@ -46,9 +46,7 @@ body{
     position: absolute;
     display: flex;
     margin-top: 180px;
-    margin-left: 30em;
-    max-width: 100%;
-    min-width: 90%;
+    margin-left: 10em;
 }
 .sec-add, .div-style{
     box-shadow: 1px 3px 4px 1px #969696;
@@ -88,7 +86,7 @@ outline: none;
 }
 .btn-style-2{
 margin-top: 22em;
-margin-left:500px;
+margin-left:400px;
 cursor:pointer;
 }
 ul li {
@@ -302,54 +300,59 @@ ul li.checked::before {
     #head-bg{
         background-image: url(./images/bg-mobile-light.jpg) no-repeat;
         max-width: 100%;
-        height: 40vh;
+        height: 30vh;
     }
     .div-style, .changeDiv{
-       margin-left: -370px;
+       margin-left: -300px;
        margin-top: 350px;
        width: 80%;
        font-size: 15px;
     }
     .changeInput, .sec-add{
-       margin-left: 30px;
+       margin-left: 80px;
        margin-top: 250px;
        width: 80%;
        font-size: 15px;
     }
      #h1{
-         font-size: 31px;
-        margin-left: 100px;
-         width: 100%;
-         margin-top: -10px;
+         font-size: 3rem;
+        margin-left: -330px;
      }  
     .moon-logo,.sun-logo{
-        width: 40%;
-        margin-top: 60px;
+        margin-top: -5px;
+        z-index: 0;
+        position: absolute;
+        background-repeat: no-repeat;
     }
     .moon-logo{
-        margin-left: 90px;
+        margin-left: -100px;
+    }
+    .sun-logo{
+        margin-left: -160px;
     }
     .btn-style{
-        margin-left: 350px;
+        margin-left: 300px;
         margin-top: 280px;
     }
     .btn-style-2{
-        margin-left: 290px;
+        margin-left: 170px;
         margin-top: 650px;
     }
     .close{
-        margin-left: 250px;
+        margin-left: 150px;
     }
     .form, .main{
         margin:0;
         padding: 0;   
     }
-    .main{
+     .main{
         width: 0%;
     }
     .form{
-        width: auto;
+        width: 20rem;
     }
-
+        #main{
+        width: 70%;
+    }
 
 }
