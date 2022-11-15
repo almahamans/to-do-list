@@ -1,50 +1,54 @@
+let ul = document.getElementById("list")
 //add elements 
 function list(){
-    var li = document.createElement("li");
-  var inputValue = document.getElementById("sec-add").value;
-  var t = document.createTextNode(inputValue);
+  const li = document.createElement("li");
+  let inputValue = document.getElementById("sec-add").value;
+  let t = document.createTextNode(inputValue);
   li.appendChild(t);
   if (inputValue === '') {
     alert("You must write something!");
   } else {
-    document.getElementById("list").appendChild(li);
+    ul.appendChild(li);
   }
+
   document.getElementById("sec-add").value = "";
+
 //create close sign and like it to each created element
-  var span = document.createElement("span");
-  var txt = document.createTextNode("\u00D7");
+  const span = document.createElement("span");
+  const txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
-
+localStorage['lists'] = ul.innerHTML
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
-      var div = this.parentElement;
+      let div = this.parentElement;
       div.style.display = "none";
+      localStorage["lists"] = ul.innerHTML
     }
   } 
-  
-
 }
 
-
 //delete one element from close sign
-var close = document.getElementsByClassName("close");
-var i;
-var div;
+const close = document.getElementsByClassName("close");
+let i , div;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
      div = this.parentElement;
     div.removeChild("i"); 
+    localStorage['lists'] = ul.innerHTML
   } 
  }
 
+ if (localStorage["lists"]) {
+  ul.innerHTML = localStorage["lists"];
+}
 
 //check on one element
-var lists = document.querySelector('ul');
-lists.addEventListener('click', function(ev) {
+ul.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
+    localStorage['lists'] = ul.innerHTML
   } 
 }, false);
 
@@ -52,6 +56,7 @@ lists.addEventListener('click', function(ev) {
 function removeList(){
     var list = document.getElementsByTagName("ul");
     list[0].innerHTML = "";
+    localStorage['lists'] = ul.innerHTML
 }
 
 
