@@ -2,8 +2,11 @@
 ## Description
 A responsive website that able the user to add a chores also can mark complete on it, delete it and delete all the list. 
 ## Built with
-HTML, css, Flexbox and vanilla JS. 
-Used media query to make different screen sizes and maniplated DOM to make all functions.
+HTML, css, Flexbox and JS. 
+## Strategy
+- Used query media to make different screen sizes.
+- Local storege used to save data when browser closed.
+- Maniplated DOM to make all functions.
 ## Link
 Website URL: https://almahamans.github.io/to-do-list/main.html
 ## Resources
