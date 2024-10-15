@@ -1,95 +1,117 @@
-let ul = document.getElementById("list")
-//add elements 
-function list(){
-  const li = document.createElement("li");
-  let inputValue = document.getElementById("sec-add").value;
-  let t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    ul.appendChild(li);
+let userInput = document.querySelector("#input");
+let label = document.querySelector("label");
+let addBtn = document.querySelector("#add__btn");
+let list = document.querySelector("#ulist");
+let form = document.querySelector("form");
+let so = document.querySelector("#lists__sec");
+let counter = document.querySelector("#counter");
+
+let search_label = document.querySelector("#search_input_label");
+let search_input = document.querySelector("#search_input");
+
+let count = 0;
+let lists = JSON.parse(localStorage.getItem("tasks")) || [];
+//to display tasks from localstorage
+if (lists.length > 0) {
+  lists.forEach((task) => {
+    addToDo(task);
+    count = lists.length;
+    updateLocalStorage();
+  });
+  counter.innerHTML = `Number of tasks: ${count}`;
+}
+
+addBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  let inputTask = userInput.value;
+  //check if its empty inputs
+  label.style.color = "red";
+  label.style.display = "block";
+  if (!inputTask) {
+    label.innerHTML = "Should write something...";
+    setTimeout(() => {
+      label.style.display = "none";
+    }, 2000);
+    return;
   }
+  addToDo(inputTask);
+  lists.push(inputTask);
+  count++;
+  updateLocalStorage();
+  form.reset();
+  counter.innerHTML = `Number of tasks: ${count}`;
+});
 
-  document.getElementById("sec-add").value = "";
+function addToDo(inputTask) {
+  //creating div for styling
+  let text_div = document.createElement("div");
 
-//create close sign and like it to each created element
-  const span = document.createElement("span");
-  const txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-localStorage['lists'] = ul.innerHTML
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      let div = this.parentElement;
-      div.style.display = "none";
-      localStorage["lists"] = ul.innerHTML
+  let li = document.createElement("li");
+  //create span tag to hold input value
+  let task = document.createElement("span");
+  task.textContent = inputTask;
+  //create checkbox button
+  let checkbox = document.createElement("input");
+  checkbox.setAttribute("type", "checkbox");
+
+  text_div.appendChild(checkbox);
+  text_div.appendChild(task);
+  li.appendChild(text_div);
+  //create section for buttons for styleing
+  let btn_sec = document.createElement("section");
+  //create delete for each item in the list
+  let deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Delete";
+  btn_sec.appendChild(deleteBtn);
+  //create edit for each item in the list
+  let editBtn = document.createElement("button");
+  editBtn.textContent = "Edit";
+  btn_sec.appendChild(editBtn);
+
+  li.appendChild(btn_sec);
+  //append li into ul
+  list.appendChild(li);
+  //check on one element
+  checkbox.addEventListener("click", () => {
+      li.classList.toggle("checked");
+      updateLocalStorage();
+    }, false);
+
+  btn_sec.classList.add("btn_style");
+  li.classList.add("li_style");
+  //remove one item
+  deleteBtn.onclick = () => {
+    list.removeChild(li);
+    const taskText = li.querySelector("span").textContent;
+    const taskIndex = lists.indexOf(taskText);
+    lists.splice(taskIndex, 1);
+    updateLocalStorage();
+    count--;
+    counter.innerHTML = `Number of tasks: ${count}`;
+  };
+  //edit one item
+  editBtn.onclick = () => {
+    let oldTask = li.querySelector("span").textContent;
+    let newTask = prompt("Edit task:");
+    if (newTask) {
+      li.querySelector("span").textContent = newTask;
+      const taskIndex = lists.indexOf(oldTask);
+      lists[taskIndex] = newTask;
+      updateLocalStorage();
     }
-  } 
+  };
 }
 
-//delete one element from close sign
-const close = document.getElementsByClassName("close");
-let i , div;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-     div = this.parentElement;
-    div.removeChild("i"); 
-    localStorage['lists'] = ul.innerHTML
-  } 
- }
-
- if (localStorage["lists"]) {
-  ul.innerHTML = localStorage["lists"];
+function updateLocalStorage() {
+  localStorage.setItem("tasks", JSON.stringify(lists));
 }
-
-//check on one element
-ul.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-    localStorage['lists'] = ul.innerHTML
-  } 
-}, false);
-
-//delete all elements
-function removeList(){
-    var list = document.getElementsByTagName("ul");
-    list[0].innerHTML = "";
-    localStorage['lists'] = ul.innerHTML
-}
-
-
-//change mode to dark
- function changeMode(){
-document.body.style.background= "hsl(235, 21%, 11%)";
-
-let att6 = document.createAttribute("class");
-att6.value="changeInput";
-document.getElementsByTagName("input")[0].setAttributeNode(att6);
-
-let att5 = document.createAttribute("class");
-att5.value="changeDiv";
-document.getElementsByTagName("div")[0].setAttributeNode(att5);
-
-let att2 = document.createAttribute("class");
-att2.value="changeHeader";
-document.getElementsByTagName("header")[0].setAttributeNode(att2);
-}
-
-//change mode to light
-function changeMode2(){
-    document.body.style.background= "white";
-        
-    let att6 = document.createAttribute("class");
-    att6.value="sec-add";
-    document.getElementsByTagName("input")[0].setAttributeNode(att6);
-    
-    let att5 = document.createAttribute("class");
-    att5.value="div-style";
-    document.getElementsByTagName("div")[0].setAttributeNode(att5);
-    
-    let att2 = document.createAttribute("class");
-    att2.value="head-bg";
-    document.getElementsByTagName("header")[0].setAttributeNode(att2);
-    }
+//search
+search_label.style.display = "block";
+search_input.addEventListener("input", (e) => {
+  const searchTerm = e.target.value.toLowerCase();
+  const filteredTasks = lists.filter((task) =>
+    task.toLowerCase().includes(searchTerm)
+  );
+  list.innerHTML = "";
+  filteredTasks.forEach((task) => addToDo(task));
+});

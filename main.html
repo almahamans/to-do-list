@@ -1,33 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>your TO DO list</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css'  href='styles.css'>
-    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="to do list app for orgnaizing the day">
+    <meta name="keywords" content="to-do list app">
+    <title>TO-DO list</title>
+    <link rel='stylesheet' type='text/css'  href='styles.css'>  
 </head>
 <body>
-    <header id="head-bg" class="head-bg"></header>
-    <main id="main">
-        <nav class="head">
-        <h1 id="h1">T O D O</h1> 
-        <img class="moon-logo" onclick="changeMode()" />
-        <img class="sun-logo" onclick="changeMode2()" />      
-        </nav>
-
-        <form id="form" class="form">
-       <input type="text" class="sec-add" id="sec-add" placeholder="create a new to do..">
-       <nav id="btn" class="btn-style" onclick="list()">add</nav>
-        <div id="list-div" class="div-style">
-            <ul id="list">
-                
-            </ul>
-        </div>
-        <nav id="btn2" class="btn-style-2" onclick="removeList()">Clear All</nav>
-    </form>
-</main>
+ <main>
+        <section class="input">
+        <h1>To Dos for today</h1>
+        <form>
+            <label for="input"></label>
+            <input type="text" name="input" id="input" class="input_style" placeholder="write a task" required>
+            <button id="add__btn">Add</button>
+        </form>
+        </section>
+        <section id="lists__sec">
+            <ul id="ulist"></ul>
+        </section>
+        <h2 id="counter">Number of tasks: </h2>
+        <section class="search">
+            <form id="search_form">
+                <label for="search_input" id="search_input_label">Search for tasks:</label>
+                <input type="text" name="search_input" id="search_input" class="input_style" placeholder="type something" required>
+            </form>
+        </section>
+    </main>
 <script src='index.js'></script>
 </body>
 </html>
