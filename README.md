@@ -1,13 +1,11 @@
 # TO DO LIST
 ## Description
-A responsive website that able the user to add a chores also can mark complete on it, delete it and delete all the list. 
+A responsive website that able the user to add tasks and mark complete on it, edit it and delete it. 
 ## Built with
-HTML, css, Flexbox and JS. 
+HTML, css and JS. 
 ## Strategy
 - Used query media to make different screen sizes.
 - Local storege used to save data when browser closed.
 - Maniplated DOM to make all functions.
 ## Link
 Website URL: https://almahamans.github.io/to-do-list/main.html
-## Resources
-The idea and style guid from [Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW) also found this page [W3Schools](https://www.w3schools.com/howto/howto_js_todolist.asp)helpful in writting main functions.
