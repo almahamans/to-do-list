@@ -9,13 +9,14 @@ main{
 }
 .input{
     background-color: white;
-    min-width: 80%;
+    min-width: 70%;
     height: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+    margin-top: 2rem;
 }
 .input form{
     display: inline;
@@ -44,7 +45,7 @@ main{
     min-width: 30rem;
     padding: 1rem;
     background-color: white;
-    margin-bottom: 2%;
+    margin-bottom: 1rem;
     border-radius: 20px;
 }
 .btn_style{
