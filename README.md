@@ -1,6 +1,6 @@
 # TO DO LIST
 ## Description
-A responsive website that able the user to add tasks and mark complete on it, edit it and delete it. 
+A responsive website that enable user to add, delete, edit tasks and mark complete on it.
 ## Built with
 HTML, css and JS. 
 ## Strategy
